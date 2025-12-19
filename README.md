@@ -26,5 +26,5 @@ Follow these steps to set up the project locally on your machine.
 
 1. **Clone the repository**
    ```bash
-   git clone <YOUR_GIT_URL>
+   git clone https://github.com/kamranNabil/ShapeIQ
    cd ShapeIQ

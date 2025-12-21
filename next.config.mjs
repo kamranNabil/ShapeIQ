@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: "standalone", // <--- ADD THIS LINE
   reactStrictMode: true,
-  // If you are using images from external URLs, add domains here
   images: {
     domains: [],
   },

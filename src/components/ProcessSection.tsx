@@ -29,7 +29,7 @@ const steps = [
 
 const ProcessSection = () => {
   return (
-    <section id="features" className="py-24 bg-gradient-subtle">
+    <section id="features" className="py-16 bg-gradient-subtle">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">How It Works</span>

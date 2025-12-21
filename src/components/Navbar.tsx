@@ -6,12 +6,13 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-xl bg-gradient-hero flex items-center justify-center">
-            <Leaf className="w-5 h-5 text-primary-foreground" />
-          </div>
-          <span className="text-xl font-bold text-foreground">EcoCast</span>
+          <img
+            src="https://acumen-1045798860135.us-central1.run.app/assets/ShapeIQ.jpg"
+            alt="ShapeIQ Logo"
+            className="h-10 w-auto rounded-xl object-contain rounded-2xl"
+          />
         </div>
-        
+
         <div className="hidden md:flex items-center gap-8">
           <a href="#problem" className="text-muted-foreground hover:text-foreground transition-colors">Problem</a>
           <a href="#solution" className="text-muted-foreground hover:text-foreground transition-colors">Solution</a>
@@ -19,7 +20,7 @@ const Navbar = () => {
           <a href="#market" className="text-muted-foreground hover:text-foreground transition-colors">Market</a>
         </div>
 
-        <Button variant="hero" size="sm">
+        <Button variant="hero-outline" size="sm">
           Get Started
         </Button>
       </div>

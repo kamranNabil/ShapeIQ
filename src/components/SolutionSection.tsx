@@ -11,7 +11,7 @@ const features = [
     icon: Recycle,
     title: "Recycled PETG Plastic",
     description: "Made from recycled plastic waste, fully recyclable after use—closing the loop on medical waste.",
-    color: "accent",
+    color: "primary",
   },
   {
     icon: Cpu,
@@ -23,13 +23,13 @@ const features = [
     icon: Smartphone,
     title: "Bluetooth Mobile App",
     description: "Track your recovery, receive alerts, and share data with your doctor—all from your phone.",
-    color: "accent",
+    color: "primary",
   },
 ];
 
 const SolutionSection = () => {
   return (
-    <section id="solution" className="py-24">
+    <section id="solution" className="py-16">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left - Visual */}
@@ -40,7 +40,7 @@ const SolutionSection = () => {
               
               {/* Central circle */}
               <div className="absolute inset-8 rounded-full border-2 border-dashed border-primary/30 animate-spin" style={{ animationDuration: '30s' }} />
-              <div className="absolute inset-16 rounded-full border-2 border-dashed border-accent/30 animate-spin" style={{ animationDuration: '20s', animationDirection: 'reverse' }} />
+              <div className="absolute inset-16 rounded-full border-2 border-dashed border-primary/30 animate-spin" style={{ animationDuration: '20s', animationDirection: 'reverse' }} />
               
               {/* Center content */}
               <div className="absolute inset-0 flex items-center justify-center">

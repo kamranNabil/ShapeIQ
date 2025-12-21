@@ -23,7 +23,7 @@ const markets = [
 
 const MarketSection = () => {
   return (
-    <section id="market" className="py-24">
+    <section id="market" className="py-16">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">Market Fit</span>

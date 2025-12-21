@@ -31,7 +31,7 @@ const HeroSection = () => {
             </p>
             
             <div className="flex flex-wrap gap-4 animate-slide-up animation-delay-600">
-              <Button variant="hero" size="lg">
+              <Button variant="hero-outline" size="lg">
                 Schedule Demo
                 <ArrowRight className="w-5 h-5" />
               </Button>
@@ -91,9 +91,9 @@ const HeroSection = () => {
                   <Bluetooth className="w-5 h-5 text-primary" />
                 </div>
                 <div className="absolute bottom-6 left-6 p-3 rounded-xl bg-card shadow-soft border border-border/50 animate-float animation-delay-600">
-                  <Activity className="w-5 h-5 text-accent" />
+                  <Activity className="w-5 h-5 text-primary" />
                 </div>
-                <div className="absolute bottom-20 right-6 p-3 rounded-xl bg-card shadow-soft border border-border/50 animate-float animation-delay-400">
+                <div className="absolute bottom-6 right-6 p-3 rounded-xl bg-card shadow-soft border border-border/50 animate-float animation-delay-400">
                   <Recycle className="w-5 h-5 text-primary" />
                 </div>
               </div>

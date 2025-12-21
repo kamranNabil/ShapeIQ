@@ -6,10 +6,11 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-xl bg-gradient-hero flex items-center justify-center">
-              <Leaf className="w-5 h-5 text-primary-foreground" />
-            </div>
-            <span className="text-xl font-bold">EcoCast</span>
+            <img
+            src="https://acumen-1045798860135.us-central1.run.app/assets/ShapeIQ.jpg"
+            alt="ShapeIQ Logo"
+            className="h-10 w-auto rounded-xl object-contain rounded-2xl"
+          />
           </div>
           
           <div className="flex items-center gap-8 text-sm text-muted-foreground">

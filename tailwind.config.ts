@@ -19,40 +19,68 @@ const config = {
     },
     extend: {
       colors: {
-        border: "#8E42C6",        // Purple borders
-        input: "#8E42C6",         // Purple input fields
-        ring: "#8E42C6",          // Purple focus rings
-        background: "#FFFFFF",    // White background
-        foreground: "#8E42C6",    // Purple main text
+        // --- CORE BRAND COLORS ---
+        brand: {
+          DEFAULT: "#8D42C6",   // Royal/Electric Purple
+          light: "#F3E6FA",     // Light tint for backgrounds
+          dark: "#5B2A82",      // Darker shade for hover states
+        },
+        
+        // --- SEMANTIC UI COLORS ---
+        border: "#8D42C6",        // Royal Purple borders (as requested)
+        input: "#8D42C6",         // Royal Purple input outlines
+        ring: "#8D42C6",          // Royal Purple focus rings
+        
+        background: "#FFFFFF",    // Pure White
+        foreground: "#000000",    // Pure Black (High Contrast)
         
         primary: {
-          DEFAULT: "#8E42C6",     // Purple primary buttons
-          foreground: "#FFFFFF",  // White text on buttons
+          DEFAULT: "#8D42C6",     // Royal Purple
+          foreground: "#FFFFFF",  // White text on purple buttons
         },
         secondary: {
-          DEFAULT: "#F4EBF9",     // Light purple for secondary actions
-          foreground: "#8E42C6",
+          DEFAULT: "#F3E6FA",     // A light lavender tint matching your new purple
+          foreground: "#000000",  // Black text on light purple
         },
         destructive: {
-          DEFAULT: "hsl(var(--destructive))", // Keep standard error red
+          DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
         muted: {
-          DEFAULT: "#F4EBF9",     // Light purple background for muted areas
-          foreground: "#8E42C6",
+          DEFAULT: "#F3E6FA",     // Light lavender background for muted areas
+          foreground: "#8D42C6",  // Purple text for labels/subtitles
         },
         accent: {
-          DEFAULT: "#F4EBF9",     // Light purple hover effect
-          foreground: "#8E42C6",
+          DEFAULT: "#F3E6FA",     // Light lavender hover effect
+          foreground: "#000000",
         },
         popover: {
           DEFAULT: "#FFFFFF",     // White popups
-          foreground: "#8E42C6",
+          foreground: "#000000",  // Black text
         },
         card: {
           DEFAULT: "#FFFFFF",     // White cards
-          foreground: "#8E42C6",
+          foreground: "#000000",  // Black text
         },
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+      },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },

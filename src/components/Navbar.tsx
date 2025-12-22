@@ -1,30 +1,148 @@
+"use client";
+
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Leaf } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const navLinks = ["Problem", "Solution", "Features", "Market"];
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
-      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <img
-            src="https://acumen-1045798860135.us-central1.run.app/assets/ShapeIQ.jpg"
-            alt="ShapeIQ Logo"
-            className="h-10 w-auto rounded-xl object-contain rounded-2xl"
-          />
+    // 1. Fixed Container using 'inset-x-4' to prevent horizontal overflow
+    <div className="fixed top-4 inset-x-4 z-50 flex justify-center">
+      
+      {/* 2. The Floating Island */}
+      <nav 
+        className={`
+          w-full max-w-5xl 
+          bg-white/10 backdrop-blur-xl 
+          border border-purple-200 
+          rounded-2xl 
+          shadow-lg shadow-purple-900/5
+          transition-all duration-300
+          overflow-hidden
+          ${isMobileMenuOpen ? "bg-white ring-1 ring-purple-100" : ""} 
+        `}
+      >
+        {/* Main Bar Content */}
+        <div className="px-4 md:px-6 h-[4.5rem] flex items-center justify-between">
+          
+          {/* LEFT: Logo Section */}
+          <div className="flex flex-col items-start select-none cursor-pointer group">
+            <div className="flex items-center gap-2">
+              <img
+                src="/assets/ShapeIQ.png"
+                alt="ShapeIQ Logo"
+                className="h-8 md:h-9 w-auto object-contain transition-transform group-hover:scale-105"
+              />
+              <span className="text-lg font-bold text-black tracking-tight group-hover:text-brand transition-colors">
+                ShapeIQ
+              </span>
+            </div>
+            {/* Tagline: Visible on all screens, but scales down on mobile */}
+            <span className="text-[0.7rem] md:text-[0.65rem] font-bold tracking-[0.2em] text-zinc-500 uppercase mt-0.5 pl-1 group-hover:text-black transition-colors">
+              Intelligent Design
+            </span>
+          </div>
+
+          {/* CENTER: Desktop Links (Hidden on Mobile) */}
+          <div className="hidden md:flex items-center gap-1">
+            {navLinks.map((item) => (
+              <a
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                className="
+                  px-4 py-2 text-sm font-medium text-zinc-600 
+                  hover:text-brand hover:bg-purple-100 
+                  rounded-xl transition-all duration-200
+                "
+              >
+                {item}
+              </a>
+            ))}
+          </div>
+
+          {/* RIGHT: CTA + Mobile Toggle */}
+          <div className="flex items-center gap-3 md:gap-4">
+            {/* Desktop CTA */}
+            <Button 
+              className="
+                hidden md:inline-flex
+                bg-brand text-white hover:bg-white 
+                hover:text-brand-dark rounded-2xl font-bold 
+                shadow-[0_4px_14px_0_rgba(141,66,198,0.39)]
+                transition-all hover:shadow-[0_6px_20px_rgba(141,66,198,0.23)]
+                hover:-translate-y-0.5
+              "
+              size="sm"
+            >
+              Get Started
+            </Button>
+            
+            {/* Mobile/Tablet Menu Toggle Button */}
+            <button 
+              onClick={toggleMenu}
+              className="md:hidden p-2 text-zinc-700 hover:text-brand hover:bg-purple-50 rounded-md transition-colors focus:outline-none"
+              aria-label="Toggle Menu"
+            >
+              {isMobileMenuOpen ? (
+                <X className="h-6 w-6 text-brand" /> 
+              ) : (
+                <Menu className="h-6 w-6" /> 
+              )}
+            </button>
+          </div>
         </div>
 
-        <div className="hidden md:flex items-center gap-8">
-          <a href="#problem" className="text-muted-foreground hover:text-foreground transition-colors">Problem</a>
-          <a href="#solution" className="text-muted-foreground hover:text-foreground transition-colors">Solution</a>
-          <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">Features</a>
-          <a href="#market" className="text-muted-foreground hover:text-foreground transition-colors">Market</a>
-        </div>
+        {/* 3. Mobile Dropdown Menu */}
+        {/* We use a transition for height or display here */}
+        <div 
+          className={`
+            md:hidden overflow-hidden transition-[max-height] duration-300 ease-in-out
+            ${isMobileMenuOpen ? "max-h-[80vh] border-t border-purple-100" : "max-h-0"}
+          `}
+        >
+          <div className="p-4 space-y-4 bg-white/50">
+            {/* Links Stack */}
+            <div className="flex flex-col space-y-2">
+              {navLinks.map((item) => (
+                <a
+                  key={item}
+                  href={`#${item.toLowerCase()}`}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="
+                    block px-4 py-3 text-sm font-medium text-zinc-600 
+                    hover:text-brand hover:bg-purple-50 
+                    rounded-lg transition-colors
+                  "
+                >
+                  {item}
+                </a>
+              ))}
+            </div>
 
-        <Button variant="hero-outline" size="sm">
-          Get Started
-        </Button>
-      </div>
-    </nav>
+            {/* Mobile CTA (Full Width) */}
+            <Button 
+              className="
+                w-full
+                bg-brand hover:bg-brand-dark 
+                text-white rounded-lg font-semibold 
+                shadow-lg shadow-purple-500/20
+              "
+              size="lg"
+            >
+              Get Started
+            </Button>
+          </div>
+        </div>
+      </nav>
+    </div>
   );
 };
 

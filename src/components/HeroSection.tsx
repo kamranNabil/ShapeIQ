@@ -1,102 +1,127 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Bluetooth, Recycle, Activity } from "lucide-react";
+import { ArrowRight, Bluetooth, Recycle, Droplets, Smartphone, Layers } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-subtle" />
-      <div className="absolute top-20 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse-glow" />
-      <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-pulse-glow animation-delay-400" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 md:pt-32 bg-white">
       
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left content */}
-          <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary text-secondary-foreground text-sm font-medium animate-slide-up">
-              <Recycle className="w-4 h-4" />
-              Sustainable Healthcare Innovation
+      {/* --- BACKGROUND LAYERS --- */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-[1000px] h-[500px] bg-brand/10 rounded-full blur-[100px] pointer-events-none" />
+      
+      {/* 2. ENGINEERING GRID */}
+      <div className="absolute inset-0 -z-10 h-full w-full bg-[linear-gradient(to_right,#8D42C60a_1px,transparent_1px),linear-gradient(to_bottom,#8D42C60a_1px,transparent_1px)] bg-[size:40px_40px]">
+        <div className="absolute inset-0 bg-white/60 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,transparent_20%,black_100%)]" />
+      </div>
+
+      {/* --- CONTENT --- */}
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          
+          {/* LEFT CONTENT */}
+          <div className="space-y-8 max-w-2xl">
+            
+            {/* Tagline Badge */}
+            <div className="animate-slide-up">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-purple-200 bg-purple-50 text-brand text-xs font-bold uppercase tracking-widest shadow-sm">
+                <Recycle className="w-3 h-3" />
+                From Waste to Wellness
+              </div>
+            </div>
+
+            {/* Main Headline */}
+            <div className="space-y-4">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight animate-slide-up text-zinc-500">
+                Reshaping <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand via-purple-600 to-indigo-600">
+                  Orthopedics.
+                </span>
+              </h1>
+              <p className="text-lg md:text-xl text-zinc-600 leading-relaxed max-w-lg animate-slide-up animation-delay-200">
+                Meet <span className="font-bold text-brand">ShapeIQ</span>. The world's first breathable, waterproof, and sensor-enabled cast made from recycled PETG.
+              </p>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-slide-up animation-delay-200">
-              Smart Orthopedic
-              <span className="text-gradient"> Solutions</span>
-              <br />
-              for a Greener Future
-            </h1>
-            
-            <p className="text-lg text-muted-foreground max-w-lg animate-slide-up animation-delay-400">
-              EcoCast revolutionizes fracture care with 3D-printed, sensor-enabled casts made from recycled PETG. 
-              Custom-fit comfort meets real-time health monitoring.
-            </p>
-            
-            <div className="flex flex-wrap gap-4 animate-slide-up animation-delay-600">
-              <Button variant="hero-outline" size="lg">
-                Schedule Demo
-                <ArrowRight className="w-5 h-5" />
+            {/* Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 animate-slide-up animation-delay-400">
+              <Button className="h-12 px-8 rounded-xl border border-brand bg-brand text-white hover:bg-white hover:text-brand-dark font-semibold text-base shadow-[0_4px_14px_0_rgba(141,66,198,0.39)] transition-all hover:shadow-[0_6px_20px_rgba(141,66,198,0.23)] hover:-translate-y-1">
+                For Hospitals
+                <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
-              <Button variant="hero-outline" size="lg">
-                Learn More
+              <Button className="h-12 px-8 rounded-xl border border-brand bg-white text-brand hover:bg-brand hover:text-white font-medium text-base">
+                View Tech Specs
               </Button>
             </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-border animate-slide-up animation-delay-800">
-              <div>
-                <p className="text-3xl font-bold text-primary">40%</p>
-                <p className="text-sm text-muted-foreground">Less Medical Waste</p>
-              </div>
-              <div>
-                <p className="text-3xl font-bold text-primary">24/7</p>
-                <p className="text-sm text-muted-foreground">Real-time Monitoring</p>
-              </div>
-              <div>
-                <p className="text-3xl font-bold text-primary">3x</p>
-                <p className="text-sm text-muted-foreground">More Comfortable</p>
-              </div>
+            {/* STATS GRID */}
+            <div className="grid grid-cols-3 gap-4 animate-slide-up animation-delay-600">
+              {[
+                { label: "Plastic Bottles Repurposed", value: "30+", icon: Recycle },
+                { label: "Lighter than Plaster", value: "40%", icon: Layers },
+                { label: "Real-time Monitoring", value: "24/7", icon: Smartphone },
+              ].map((stat, i) => (
+                <div key={i} className="p-4 rounded-2xl bg-white/80 backdrop-blur-sm border border-purple-400 shadow-sm hover:shadow-md hover:border-purple-300 transition-all group">
+                  <div className="p-2 bg-purple-50 w-fit rounded-2xl mb-3 group-hover:bg-brand group-hover:text-white transition-colors text-brand">
+                     <stat.icon className="w-4 h-4 hover rounded" />
+                  </div>
+                  <p className="text-2xl font-bold text-zinc-900">{stat.value}</p>
+                  <p className="text-[10px] md:text-xs text-zinc-500 font-medium leading-tight mt-1">{stat.label}</p>
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* Right - 3D Cast Illustration */}
-          <div className="relative flex items-center justify-center animate-fade-in animation-delay-400">
-            <div className="relative w-80 h-80 lg:w-96 lg:h-96">
-              {/* Glow background */}
-              <div className="absolute inset-0 bg-gradient-hero rounded-full blur-3xl opacity-20 animate-pulse-glow" />
+          {/* RIGHT CONTENT: The "Digital Twin" Visualization */}
+          <div className="relative flex items-center justify-center lg:justify-end animate-fade-in animation-delay-400">
+            <div className="relative w-[350px] h-[350px] lg:w-[450px] lg:h-[450px]">
               
-              {/* Main cast visual */}
-              <div className="relative w-full h-full rounded-3xl bg-card shadow-card border border-border/50 flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5" />
+              {/* Cast Container */}
+              <div className="relative w-full h-full rounded-[2.5rem] bg-gradient-to-b from-purple-50/50 to-white shadow-2xl border border-purple-400 flex items-center justify-center overflow-hidden z-20">
                 
-                {/* Cast mesh pattern */}
-                <svg className="w-48 h-64 text-primary animate-float" viewBox="0 0 100 140" fill="none">
+                {/* Abstract Cast Representation */}
+                <svg className="w-64 h-80 pt-2 text-brand drop-shadow-xl" viewBox="0 0 100 140" fill="none">
                   <defs>
                     <linearGradient id="castGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="currentColor" stopOpacity="0.8" />
-                      <stop offset="100%" stopColor="currentColor" stopOpacity="0.4" />
+                      <stop offset="0%" stopColor="#8D42C6" stopOpacity="0.8" />
+                      <stop offset="100%" stopColor="#6B21A8" stopOpacity="0.5" />
                     </linearGradient>
                   </defs>
-                  {/* Honeycomb pattern representing the 3D printed cast */}
-                  <path d="M30 10 L50 0 L70 10 L70 30 L50 40 L30 30 Z" stroke="url(#castGradient)" strokeWidth="2" fill="none" />
-                  <path d="M30 50 L50 40 L70 50 L70 70 L50 80 L30 70 Z" stroke="url(#castGradient)" strokeWidth="2" fill="none" />
-                  <path d="M30 90 L50 80 L70 90 L70 110 L50 120 L30 110 Z" stroke="url(#castGradient)" strokeWidth="2" fill="none" />
-                  <path d="M10 30 L30 20 L50 30 L50 50 L30 60 L10 50 Z" stroke="url(#castGradient)" strokeWidth="2" fill="none" />
-                  <path d="M50 30 L70 20 L90 30 L90 50 L70 60 L50 50 Z" stroke="url(#castGradient)" strokeWidth="2" fill="none" />
-                  <path d="M10 70 L30 60 L50 70 L50 90 L30 100 L10 90 Z" stroke="url(#castGradient)" strokeWidth="2" fill="none" />
-                  <path d="M50 70 L70 60 L90 70 L90 90 L70 100 L50 90 Z" stroke="url(#castGradient)" strokeWidth="2" fill="none" />
-                  <circle cx="50" cy="70" r="4" fill="currentColor" opacity="0.6" />
+                  <path d="M30 10 L50 0 L70 10 L70 30 L50 40 L30 30 Z" stroke="url(#castGradient)" strokeWidth="2.5" fill="none" />
+                  <path d="M30 50 L50 40 L70 50 L70 70 L50 80 L30 70 Z" stroke="url(#castGradient)" strokeWidth="2.5" fill="none" />
+                  <path d="M30 90 L50 80 L70 90 L70 110 L50 120 L30 110 Z" stroke="url(#castGradient)" strokeWidth="2.5" fill="none" />
+                  <path d="M10 30 L30 20 L50 30 L50 50 L30 60 L10 50 Z" stroke="url(#castGradient)" strokeWidth="2.5" fill="none" />
+                  <path d="M50 30 L70 20 L90 30 L90 50 L70 60 L50 50 Z" stroke="url(#castGradient)" strokeWidth="2.5" fill="none" />
+                  <path d="M50 70 L70 60 L90 70 L90 90 L70 100 L50 90 Z" stroke="url(#castGradient)" strokeWidth="2.5" fill="none" />
+                  
+                  {/* The "Smart Sensor" Dot */}
+                  <circle cx="50" cy="70" r="4" fill="#8D42C6" className="animate-pulse">
+                     <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" />
+                  </circle>
+                  <circle cx="50" cy="70" r="12" stroke="#8D42C6" strokeWidth="1" opacity="0.5" className="animate-ping" />
                 </svg>
 
-                {/* Floating feature badges */}
-                <div className="absolute top-6 right-6 p-3 rounded-xl bg-card shadow-soft border border-border/50 animate-float animation-delay-200">
-                  <Bluetooth className="w-5 h-5 text-primary" />
+                {/* Floating Feature Cards */}
+                <div className="absolute top-24 left-6 animate-float animation-delay-500">
+                    <div className="bg-purple-100 backdrop-blur border border-purple-100 p-2 rounded-2xl shadow-lg flex items-center gap-2">
+                        {/* <div className="bg-blue-50 p-1.5 rounded-md text-blue-500"> */}
+                            <Droplets className="w-3.5 h-3.5" />
+                        {/* </div> */}
+                        <span className="text-xs font-semibold text-purple-500">Waterproof</span>
+                    </div>
                 </div>
-                <div className="absolute bottom-6 left-6 p-3 rounded-xl bg-card shadow-soft border border-border/50 animate-float animation-delay-600">
-                  <Activity className="w-5 h-5 text-primary" />
-                </div>
-                <div className="absolute bottom-6 right-6 p-3 rounded-xl bg-card shadow-soft border border-border/50 animate-float animation-delay-400">
-                  <Recycle className="w-5 h-5 text-primary" />
+
+                 <div className="absolute bottom-32 right-6 animate-float animation-delay-200">
+                    <div className="bg-purple-100 backdrop-blur border border-purple-100 p-2 rounded-2xl shadow-lg flex items-center gap-2">
+                        {/* <div className="bg-purple-50 p-1.5 rounded-md text-brand"> */}
+                            <Bluetooth className="w-3.5 h-3.5" />
+                        {/* </div> */}
+                        <span className="text-xs font-semibold text-purple-500">Smart Sync</span>
+                    </div>
                 </div>
               </div>
+
+              {/* Decorative Blur behind the card */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-purple-400/20 rounded-full blur-3xl -z-10" />
+            
             </div>
           </div>
         </div>

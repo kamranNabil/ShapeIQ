@@ -101,14 +101,13 @@ const Navbar = () => {
         </div>
 
         {/* 3. Mobile Dropdown Menu */}
-        {/* We use a transition for height or display here */}
         <div 
           className={`
             md:hidden overflow-hidden transition-[max-height] duration-300 ease-in-out
             ${isMobileMenuOpen ? "max-h-[80vh] border-t border-purple-100" : "max-h-0"}
           `}
         >
-          <div className="p-4 space-y-4 bg-white/50">
+          <div className="p-4 space-y-4 bg-white">
             {/* Links Stack */}
             <div className="flex flex-col space-y-2">
               {navLinks.map((item) => (
@@ -132,7 +131,7 @@ const Navbar = () => {
               className="
                 w-full
                 bg-brand hover:bg-brand-dark 
-                text-white rounded-lg font-semibold 
+                text-white rounded-2xl font-semibold 
                 shadow-lg shadow-purple-500/20
               "
               size="lg"

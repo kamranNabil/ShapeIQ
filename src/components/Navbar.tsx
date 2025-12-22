@@ -22,9 +22,9 @@ const Navbar = () => {
         className={`
           w-full max-w-5xl 
           bg-white/10 backdrop-blur-xl 
-          border border-purple-200 
+          border border-purple-400 
           rounded-2xl 
-          shadow-lg shadow-purple-900/5
+          shadow-lg shadow-purple-300
           transition-all duration-300
           overflow-hidden
           ${isMobileMenuOpen ? "bg-white ring-1 ring-purple-100" : ""} 

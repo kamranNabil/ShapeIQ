@@ -14,11 +14,8 @@ const Navbar = () => {
   const navLinks = ["Problem", "Solution", "Features", "Market"];
 
   return (
-    // 1. Fixed Container using 'inset-x-4' to prevent horizontal overflow
     <div className="fixed top-4 inset-x-4 z-50 flex justify-center">
-      
-      {/* 2. The Floating Island */}
-      <nav 
+      <nav
         className={`
           w-full max-w-5xl 
           bg-white/10 backdrop-blur-xl 
@@ -32,7 +29,7 @@ const Navbar = () => {
       >
         {/* Main Bar Content */}
         <div className="px-4 md:px-6 h-[4.5rem] flex items-center justify-between">
-          
+
           {/* LEFT: Logo Section */}
           <div className="flex flex-col items-start select-none cursor-pointer group">
             <div className="flex items-center gap-2">
@@ -71,11 +68,11 @@ const Navbar = () => {
           {/* RIGHT: CTA + Mobile Toggle */}
           <div className="flex items-center gap-3 md:gap-4">
             {/* Desktop CTA */}
-            <Button 
+            <Button
               className="
                 hidden md:inline-flex
                 bg-brand text-white hover:bg-white 
-                hover:text-brand-dark rounded-2xl font-bold 
+                hover:text-brand-dark border border-brand rounded-2xl font-bold 
                 shadow-[0_4px_14px_0_rgba(141,66,198,0.39)]
                 transition-all hover:shadow-[0_6px_20px_rgba(141,66,198,0.23)]
                 hover:-translate-y-0.5
@@ -84,24 +81,24 @@ const Navbar = () => {
             >
               Get Started
             </Button>
-            
+
             {/* Mobile/Tablet Menu Toggle Button */}
-            <button 
+            <button
               onClick={toggleMenu}
               className="md:hidden p-2 text-zinc-700 hover:text-brand hover:bg-purple-50 rounded-md transition-colors focus:outline-none"
               aria-label="Toggle Menu"
             >
               {isMobileMenuOpen ? (
-                <X className="h-6 w-6 text-brand" /> 
+                <X className="h-6 w-6 text-brand" />
               ) : (
-                <Menu className="h-6 w-6" /> 
+                <Menu className="h-6 w-6" />
               )}
             </button>
           </div>
         </div>
 
         {/* 3. Mobile Dropdown Menu */}
-        <div 
+        <div
           className={`
             md:hidden overflow-hidden transition-[max-height] duration-300 ease-in-out
             ${isMobileMenuOpen ? "max-h-[80vh] border-t border-purple-100" : "max-h-0"}
@@ -127,11 +124,11 @@ const Navbar = () => {
             </div>
 
             {/* Mobile CTA (Full Width) */}
-            <Button 
+            <Button
               className="
                 w-full
-                bg-brand hover:bg-brand-dark 
-                text-white rounded-2xl font-semibold 
+                bg-brand text-white hover:text-brand-dark hover:bg-white border-2 border-brand 
+                rounded-2xl font-bold 
                 shadow-lg shadow-purple-500/20
               "
               size="lg"

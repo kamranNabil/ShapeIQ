@@ -18,49 +18,45 @@ const config = {
       },
     },
     extend: {
+      // ... (keep existing colors, border radius etc)
       colors: {
-        // --- CORE BRAND COLORS ---
         brand: {
-          DEFAULT: "#8D42C6", // Royal/Electric Purple
-          light: "#F3E6FA", // Light tint for backgrounds
-          dark: "#5B2A82", // Darker shade for hover states
+          DEFAULT: "#8D42C6",
+          light: "#F3E6FA",
+          dark: "#5B2A82",
         },
-
-        // --- SEMANTIC UI COLORS ---
-        border: "#8D42C6", // Royal Purple borders (as requested)
-        input: "#8D42C6", // Royal Purple input outlines
-        ring: "#8D42C6", // Royal Purple focus rings
-
-        background: "#FFFFFF", // Pure White
-        foreground: "#000000", // Pure Black (High Contrast)
-
+        border: "#8D42C6",
+        input: "#8D42C6",
+        ring: "#8D42C6",
+        background: "#FFFFFF",
+        foreground: "#000000",
         primary: {
-          DEFAULT: "#8D42C6", // Royal Purple
-          foreground: "#FFFFFF", // White text on purple buttons
+          DEFAULT: "#8D42C6",
+          foreground: "#FFFFFF",
         },
         secondary: {
-          DEFAULT: "#F3E6FA", // A light lavender tint matching your new purple
-          foreground: "#000000", // Black text on light purple
+          DEFAULT: "#F3E6FA",
+          foreground: "#000000",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
         muted: {
-          DEFAULT: "#F3E6FA", // Light lavender background for muted areas
-          foreground: "#8D42C6", // Purple text for labels/subtitles
+          DEFAULT: "#F3E6FA",
+          foreground: "#8D42C6",
         },
         accent: {
-          DEFAULT: "#F3E6FA", // Light lavender hover effect
+          DEFAULT: "#F3E6FA",
           foreground: "#000000",
         },
         popover: {
-          DEFAULT: "#FFFFFF", // White popups
-          foreground: "#000000", // Black text
+          DEFAULT: "#FFFFFF",
+          foreground: "#000000",
         },
         card: {
-          DEFAULT: "#FFFFFF", // White cards
-          foreground: "#000000", // Black text
+          DEFAULT: "#FFFFFF",
+          foreground: "#000000",
         },
       },
       borderRadius: {
@@ -73,14 +69,19 @@ const config = {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
         },
+        
+        // EXISTING (Keep this for the Hero Image)
         "float-slow": {
           "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-20px)" }, // Moves up 20px
+          "50%": { transform: "translateY(-20px)" }, 
         },
-        // shimmer: {
-        //   "0%": { transform: "translateX(-150%) skewX(-15deg)" },
-        //   "100%": { transform: "translateX(150%) skewX(-15deg)" },
-        // },
+
+        // NEW: Subtle float for Icons (Only 5px movement)
+        "float-subtle": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-5px)" }, 
+        },
+
         materialize: {
           "0%": {
             opacity: "0",
@@ -93,6 +94,22 @@ const config = {
             filter: "blur(0)",
           },
         },
+        "pop-in-top": {
+          "0%": { opacity: "0", transform: "translateY(-100px) scale(0.9)" },
+          "100%": { opacity: "1", transform: "translateY(0) scale(1)" },
+        },
+        "pop-in-bottom": {
+          "0%": { opacity: "0", transform: "translateY(100px) scale(0.9)" },
+          "100%": { opacity: "1", transform: "translateY(0) scale(1)" },
+        },
+        "pop-in-left": {
+          "0%": { opacity: "0", transform: "translateX(-100px) scale(0.9)" },
+          "100%": { opacity: "1", transform: "translateX(0) scale(1)" },
+        },
+        "pop-in-right": {
+          "0%": { opacity: "0", transform: "translateX(100px) scale(0.9)" },
+          "100%": { opacity: "1", transform: "translateX(0) scale(1)" },
+        },
         "accordion-up": {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
@@ -102,8 +119,15 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "float-slow": "float-slow 6s ease-in-out infinite",
-        // shimmer: "shimmer 2.5s infinite",
+        
+        // NEW UTILITY
+        "float-subtle": "float-subtle 3s ease-in-out infinite",
+
         "materialize": "materialize 1s ease-out forwards",
+        "pop-in-top": "pop-in-top 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "pop-in-left": "pop-in-left 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "pop-in-right": "pop-in-right 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "pop-in-bottom": "pop-in-bottom 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards",
       },
     },
   },

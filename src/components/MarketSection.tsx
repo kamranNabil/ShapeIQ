@@ -32,7 +32,7 @@ const MarketSection = () => {
             <span className="text-gradient"> Modern Healthcare</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            EcoCast serves the full spectrum of healthcare providers, from large government networks 
+            ShapeIQ serves the full spectrum of healthcare providers, from large government networks 
             to specialized clinics seeking innovation.
           </p>
         </div>

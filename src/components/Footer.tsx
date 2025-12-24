@@ -20,7 +20,7 @@ const Footer = () => {
           </div>
           
           <p className="text-sm text-muted-foreground">
-            © 2024 EcoCast. All rights reserved.
+            © 2024 ShapeIQ. All rights reserved.
           </p>
         </div>
       </div>

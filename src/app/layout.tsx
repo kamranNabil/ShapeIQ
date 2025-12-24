@@ -6,7 +6,7 @@ import { Providers } from "./providers";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "EcoCast Smart Casts",
+  title: "ShapeIQ - 3D Printed Orthopedic Casts",
   description: "Project converted from Vite React",
 };
 

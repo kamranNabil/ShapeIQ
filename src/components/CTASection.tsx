@@ -15,7 +15,7 @@ const CTASection = () => {
             Ready to Transform Orthopedic Care?
           </h2>
           <p className="text-lg text-secondary-foreground/90 mb-8 max-w-xl mx-auto">
-            Join the circular healthcare revolution. Partner with EcoCast to deliver sustainable, 
+            Join the circular healthcare revolution. Partner with ShapeIQ to deliver sustainable, 
             smart, and patient-centered fracture treatment.
           </p>
           

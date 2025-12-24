@@ -1,8 +1,9 @@
-import { Printer, Cpu, Smartphone, Recycle } from "lucide-react";
+import { Cpu, Smartphone, Recycle } from "lucide-react";
+import { Printer3d } from "@/components/ui/icons";
 
 const features = [
   {
-    icon: Printer,
+    icon: Printer3d,
     title: "3D-Printed Custom Fit",
     description: "Precision-scanned and printed to perfectly match your anatomy for maximum comfort and healing.",
     color: "primary",
@@ -29,14 +30,14 @@ const features = [
 
 const SolutionSection = () => {
   return (
-    <section id="solution" className="py-16">
+    <section id="solution" className="py-12">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left - Visual */}
           <div className="relative order-2 lg:order-1">
             <div className="relative aspect-square max-w-lg mx-auto">
               {/* Background glow */}
-              <div className="absolute inset-0 bg-gradient-hero rounded-full blur-3xl opacity-10" />
+              <div className="absolute inset-0 bg-secondary/70 rounded-full blur-3xl opacity-10" />
               
               {/* Central circle */}
               <div className="absolute inset-8 rounded-full border-2 border-dashed border-primary/30 animate-spin" style={{ animationDuration: '30s' }} />
@@ -75,7 +76,7 @@ const SolutionSection = () => {
               <span className="text-primary font-semibold text-sm uppercase tracking-wider">Our Solution</span>
               <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6">
                 Introducing
-                <span className="text-gradient"> EcoCast</span>
+                <span className="text-gradient"> ShapeIQ</span>
               </h2>
               <p className="text-muted-foreground text-lg">
                 A revolutionary 3D-printed orthopedic cast that combines sustainable materials, 

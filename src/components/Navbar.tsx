@@ -37,14 +37,14 @@ const Navbar = () => {
                 alt="ShapeIQ Logo"
                 className="h-8 md:h-9 w-auto object-contain transition-transform rounded-lg group-hover:scale-105"
               />
-              <span className="text-lg font-bold text-black tracking-tight group-hover:text-brand transition-colors">
+              <span className="text-3xl font-bold text-black tracking-tight group-hover:text-brand transition-colors">
                 ShapeIQ
               </span>
             </div>
             {/* Tagline: Visible on all screens, but scales down on mobile */}
-            <span className="text-[0.7rem] md:text-[0.65rem] font-bold tracking-[0.2em] text-zinc-500 uppercase mt-0.5 pl-1 group-hover:text-black transition-colors">
+            {/* <span className="text-[0.7rem] md:text-[0.65rem] font-bold tracking-[0.2em] text-zinc-500 uppercase mt-0.5 pl-1 group-hover:text-black transition-colors">
               Intelligent Design
-            </span>
+            </span> */}
           </div>
 
           {/* CENTER: Desktop Links (Hidden on Mobile) */}

@@ -1,4 +1,7 @@
+"use client";
+
 import { Scan, Cog, Package, Activity } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const steps = [
   {
@@ -29,40 +32,82 @@ const steps = [
 
 const ProcessSection = () => {
   return (
-    <section id="features" className="py-16 bg-gradient-subtle">
-      <div className="container mx-auto px-4">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-primary font-semibold text-sm uppercase tracking-wider">How It Works</span>
-          <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-6">
+    <section id="features" className="py-8 bg-secondary/70 relative overflow-hidden">
+      
+      {/* Background Decoration (Optional: Adds subtle tech feel) */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 opacity-30 pointer-events-none">
+         <div className="absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand/20 to-transparent" />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-4">
+          <span className="inline-block py-1 px-3 rounded-full bg-brand-light border border-brand/20 text-brand text-xs font-bold uppercase tracking-widest mb-4">
+            How It Works
+          </span>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight text-foreground">
             From Scan to
-            <span className="text-gradient"> Smart Recovery</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-brand-dark"> Smart Recovery</span>
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-zinc-500 text-lg max-w-2xl mx-auto leading-relaxed">
             Our streamlined Fab-as-a-Service model transforms plastic waste into custom medical devices 
-            with integrated diagnostics.
+            with integrated diagnostics in four simple steps.
           </p>
         </div>
 
+        {/* STEPS GRID */}
         <div className="relative">
-          {/* Connection line */}
-          <div className="hidden lg:block absolute top-24 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-primary via-accent to-primary opacity-30" />
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* 1. Connection Line (Desktop Only) */}
+          {/* Placed specifically to align with the top of the cards where the 'step' bubble sits */}
+          <div className="hidden lg:block absolute top-0 left-0 w-full h-full pointer-events-none z-0">
+             <div className="absolute top-[2rem] left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-transparent via-brand/30 to-transparent dashed-line" />
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 pt-8">
             {steps.map((item, index) => (
-              <div key={index} className="relative group">
-                {/* Step number */}
-                <div className="relative z-10 w-12 h-12 mx-auto mb-6 rounded-full bg-gradient-hero flex items-center justify-center shadow-soft group-hover:shadow-glow transition-shadow">
-                  <span className="text-primary-foreground font-bold">{item.step}</span>
+              <div 
+                key={index} 
+                className="group relative flex flex-col items-center"
+              >
+                
+                {/* 2. Step Indicator (The "Node" on the line) */}
+                <div className="absolute -top-9 left-1/2 -translate-x-1/2 z-20 transition-transform duration-300 group-hover:scale-110">
+                   <div className="relative flex items-center justify-center w-16 h-16 rounded-full bg-white border-4 border-secondary shadow-lg group-hover:border-brand/30 transition-colors">
+                      <span className="text-xl font-bold text-brand">{item.step}</span>
+                      
+                      {/* Glow effect behind number */}
+                      <div className="absolute inset-0 rounded-full bg-brand/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
+                   </div>
                 </div>
 
-                {/* Card */}
-                <div className="text-center p-6 rounded-2xl bg-card border border-border/50 shadow-card hover:shadow-glow transition-all duration-500 hover:-translate-y-1">
-                  <div className="w-14 h-14 mx-auto rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                    <item.icon className="w-7 h-7 text-primary" />
+                {/* 3. The Card */}
+                <div className={cn(
+                  "relative w-full mt-8 mb-4 pt-12 pb-8 px-6 rounded-3xl text-center transition-all duration-500",
+                  "bg-white/40 backdrop-blur-md border border-purple-300 shadow-sm", // Glassmorphism
+                  "hover:-translate-y-2 hover:bg-white hover:shadow-[0_20px_40px_-15px_rgba(141,66,198,0.15)] hover:border-brand/20" // Hover State
+                )}>
+                  
+                  {/* Icon */}
+                  <div className="mb-5 inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-white to-brand-light shadow-inner text-brand group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
+                    <item.icon className="w-7 h-7" />
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm">{item.description}</p>
+
+                  <h3 className="text-lg font-bold text-foreground mb-3 group-hover:text-brand transition-colors">
+                    {item.title}
+                  </h3>
+                  
+                  <p className="text-sm text-zinc-500 leading-relaxed">
+                    {item.description}
+                  </p>
+
+                  {/* Watermark Number (Visual Depth) */}
+                  <span className="absolute bottom-2 right-4 text-[4rem] font-bold text-brand/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 select-none pointer-events-none">
+                    {item.step}
+                  </span>
                 </div>
+
               </div>
             ))}
           </div>

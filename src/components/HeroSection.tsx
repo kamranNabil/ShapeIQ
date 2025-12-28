@@ -23,7 +23,7 @@ const HeroSection = () => {
             {/* Tagline Badge */}
             <div className="animate-slide-up">
               <div className="flex justify-center lg:justify-start">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-purple-200 bg-purple-50 text-brand text-xs font-bold uppercase tracking-widest shadow-sm">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-brand/20 bg-brand-light text-brand text-xs font-bold uppercase tracking-widest shadow-sm">
                   <Recycle className="w-3 h-3" />
                   From Waste to Wellness
                 </div>
@@ -39,7 +39,7 @@ const HeroSection = () => {
                 </span>
               </h1>
               <p className="text-lg md:text-xl text-zinc-600 leading-relaxed max-w-lg mx-auto lg:mx-0 animate-slide-up animation-delay-200">
-                Meet <span className="font-bold text-brand">ShapeIQ</span>. The world's first breathable, waterproof, and sensor-enabled cast made from recycled PETG.
+                Meet <span className="font-bold text-brand">EcoCast</span>. The world's first breathable, waterproof, and sensor-enabled cast made from recycled PETG.
               </p>
             </div>
 
@@ -56,20 +56,21 @@ const HeroSection = () => {
 
             {/* STATS GRID */}
             <div className="grid grid-cols-3 gap-4 animate-slide-up animation-delay-600">
-              {/* {[
+              {[
                 { label: "Plastic Bottles Repurposed", value: "30+", icon: Recycle },
                 { label: "Lighter than Plaster", value: "40%", icon: Layers },
                 { label: "Real-time Monitoring", value: "24/7", icon: Smartphone },
               ].map((stat, i) => (
-                <div key={i} className="p-4 rounded-2xl bg-primary/5 backdrop-blur-sm border border-purple-400 shadow-sm hover:shadow-md hover:border-purple-300 transition-all group">
+                <div key={i} className="p-4 rounded-2xl bg-primary/5 backdrop-blur-sm border border-purple-300 shadow-sm hover:bg-primary/20 hover:shadow-md hover:border-purple-400 transition-all group">
                   <div className="p-2 bg-white w-fit rounded-2xl mb-3 group-hover:bg-brand group-hover:text-white transition-colors text-brand">
                     <stat.icon className="w-4 h-4 hover rounded" />
                   </div>
                   <p className="text-2xl font-bold text-zinc-900">{stat.value}</p>
                   <p className="text-[10px] md:text-xs text-zinc-500 font-medium leading-tight mt-1">{stat.label}</p>
                 </div>
-              ))} */}
-              {[
+              ))}
+            </div>
+              {/* {[
                 { label: "Plastic Bottles Repurposed", value: "30+", icon: Recycle },
                 { label: "Lighter than Plaster", value: "40%", icon: Layers },
                 { label: "Real-time Monitoring", value: "24/7", icon: Smartphone },
@@ -77,23 +78,23 @@ const HeroSection = () => {
                 <div
                   key={i}
                   // 1. CONTAINER: Transparent by default, Materializes on Hover
-                  className=" group relative flex flex-col justify-center items-start p-4 rounded-2xl h-auto min-h-[140px] bg-transparent border border-transparent hover:bg-white/90 hover:backdrop-blur-xl hover:border-purple-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-500 ease-out cursor-default">
+                  className=" group relative flex flex-col justify-center items-start p-4 rounded-2xl h-auto min-h-[140px] bg-transparent border border-transparent hover:bg-white/90 hover:backdrop-blur-xl hover:border-purple-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-500 ease-out cursor-default"> */}
 
                   {/* 2. ICON: Always Visible */}
-                  <div className="p-3 rounded-2xl mb-2bg-purple-50/80 text-brand backdrop-blur-smgroup-hover:bg-brand group-hover:text-whitetransition-colors duration-500">
+                  {/* <div className="p-3 rounded-2xl mb-2bg-purple-50/80 text-brand backdrop-blur-smgroup-hover:bg-brand group-hover:text-whitetransition-colors duration-500">
                     <stat.icon className="w-5 h-5" />
-                  </div>
+                  </div> */}
 
                   {/* 3. TEXT CONTENT: Hidden by default (opacity-0), Visible on Hover */}
-                  <div className="opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out">
+                  {/* <div className="opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out">
                     <p className="text-3xl font-bold text-zinc-900">{stat.value}</p>
                     <p className="text-[10px] md:text-xs text-zinc-500 font-medium leading-tight mt-1">
                       {stat.label}
-                    </p>
-                  </div>
+                    </p> 
+                  </div> 
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* RIGHT CONTENT: The "Digital Twin" Visualization */}
@@ -134,7 +135,7 @@ const HeroSection = () => {
                   <circle cx="50" cy="70" r="4" fill="#8D42C6" className="animate-pulse">
                     <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" />
                   </circle>
-                  <circle cx="50" cy="70" r="15" stroke="#8D42C6" strokeWidth="0.5" opacity="0.8" className="animate-ping animation-delay-900" />
+                  {/* <circle cx="50" cy="70" r="15" stroke="#8D42C6" strokeWidth="0.5" opacity="0.8" className="animate-ping animation-delay-900" /> */}
                 </svg>
 
                 {/* 3. FLOATING FEATURE CARDS (UI Layer) */}
